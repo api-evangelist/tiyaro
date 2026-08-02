@@ -1,7 +1,19 @@
 aid: tiyaro
 name: Tiyaro
-description: Tiyaro is a company surfaced as a portfolio company of general-catalyst and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Tiyaro is an enterprise AI company whose product, DeepQuery, replicates
+  complete business processes as AI agents that can be described in plain
+  English. Rather than rules engines or brittle integration workflows, DeepQuery
+  uses LLMs combined with enterprise-specific product and customer data to
+  identify a solution strategy and execute it across multiple steps using
+  built-in tools. Its flagship application targets customer support and IT
+  service desks - an "IT SuperAgent" trained on hundreds of third-party product
+  procedures that recommends and executes resolution steps for incoming tickets
+  - alongside revenue-operations and sales/marketing automation use cases. The
+  company was founded by a team that previously built an edge software stack for
+  hosting AI applications, and is backed by General Catalyst. Tiyaro goes to
+  market as an enterprise product engaged through a book-a-demo motion rather
+  than a self-serve developer API.
 url: https://raw.githubusercontent.com/api-evangelist/tiyaro/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +21,53 @@ x-backed-by:
 - general-catalyst
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://www.tiyaro.ai/icons/icon-512x512.png
 tags:
 - Company
+- Artificial Intelligence
+- AI Agents
+- Agentic AI
+- Customer Support
+- IT Service Management
+- Business Process Automation
+- Enterprise Software
+- LLM
+- Revenue Operations
 apis: []
+common:
+- type: DomainSecurity
+  url: security/tiyaro-domain-security.yml
+- type: Website
+  url: https://www.tiyaro.ai/
+- type: About
+  url: https://www.tiyaro.ai/about-us/
+- type: Blog
+  url: https://www.tiyaro.ai/blog/
+- type: PrivacyPolicy
+  url: https://www.tiyaro.ai/privacy/
+- type: TermsOfService
+  url: https://www.tiyaro.ai/terms-of-service/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
