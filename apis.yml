@@ -34,7 +34,7 @@ accessModel:
   method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-08-14'
 image: https://www.tiyaro.ai/icons/icon-512x512.png
 tags:
 - Company
@@ -61,13 +61,52 @@ common:
   url: https://www.tiyaro.ai/privacy/
 - type: TermsOfService
   url: https://www.tiyaro.ai/terms-of-service/
+- type: GitHubOrganization
+  url: https://github.com/tiyaro
+- type: Packages
+  url: packages/tiyaro-packages.yml
+- type: SDKs
+  url: packages/tiyaro-packages.yml
+- type: CLI
+  url: cli/tiyaro-cli.yml
+- type: Lifecycle
+  url: lifecycle/tiyaro-lifecycle.yml
+- type: LLMsTxt
+  url: llms/tiyaro-llms.txt
+- type: Plans
+  url: plans/tiyaro-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/tiyaro-rate-limits.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 x-enrichment:
-  date: '2026-07-21'
+  date: '2026-08-14'
   status: minimal
-  artifacts_added: 1
+  artifacts_added: 7
   pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Tiyaro retired its 2021-2022 developer platform without notice - api.tiyaro.ai,
+    console.tiyaro.ai and docs.tiyaro.ai all return NXDOMAIN, so the live
+    https://www.tiyaro.ai/docs/ page renders an empty iframe of the dead docs
+    host, and the current DeepQuery product is sold entirely through a
+    book-a-demo form with no developer surface.
+  evidence:
+  - url: https://www.tiyaro.ai/docs/
+    status: 200
+  - url: https://docs.tiyaro.ai/
+    status: 0
+  - url: https://api.tiyaro.ai/v1/ent
+    status: 0
+  - url: https://console.tiyaro.ai/
+    status: 0
+  - url: https://www.tiyaro.ai/.well-known/agent-card.json
+    status: 200
+  - url: https://pypi.org/pypi/tiyaro/json
+    status: 200
+  checked: '2026-08-14'
