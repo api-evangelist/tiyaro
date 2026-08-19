@@ -1,0 +1,24 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.tiyaro.ai/docs/
+limit_count: 0
+note: >-
+  No rate limits are published, and there is no live API surface on which to
+  observe response headers. The developer documentation route
+  https://www.tiyaro.ai/docs/ returns HTTP 200 but its body is only an iframe of
+  docs.tiyaro.ai, which returns NXDOMAIN, so no limits page can be read. The
+  first-party CLI (PyPI `tiyaro` 0.0.8) contains no retry/backoff or
+  rate-limit-header handling either. Recorded as an honest zero rather than
+  omitted.
+rate_limits: []
+headers_observed: []
+evidence:
+- url: https://www.tiyaro.ai/docs/
+  status: 200
+  finding: iframe-only page pointing at docs.tiyaro.ai
+- url: https://docs.tiyaro.ai/
+  status: 0
+  finding: DNS NXDOMAIN
+- url: https://api.tiyaro.ai/v1/ent
+  status: 0
+  finding: DNS NXDOMAIN - no live response headers to observe

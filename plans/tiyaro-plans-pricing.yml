@@ -1,0 +1,25 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.tiyaro.ai/sitemap-0.xml
+plan_count: 0
+note: >-
+  Tiyaro publishes no pricing at all. Its complete public site is 18 URLs
+  (enumerated from https://www.tiyaro.ai/sitemap-0.xml, HTTP 200) and none of
+  them is a pricing or plans page: /, /about-us/, /blog/ (+5 posts),
+  /book-a-demo/, /demo/, /demo/CountrySelect/, /docs/, /home/, /privacy/,
+  /product/, /product/IT/, /product/customersupport/, /terms-of-service/. The
+  only commercial path is the "Book a demo" / "Try DeepQuery" form, i.e. an
+  enterprise contact-sales motion with no published tiers, quotas or overages.
+  The former self-serve developer platform that would have carried usage pricing
+  (console.tiyaro.ai) no longer resolves - see lifecycle/tiyaro-lifecycle.yml.
+plans: []
+evidence:
+- url: https://www.tiyaro.ai/sitemap-0.xml
+  status: 200
+  finding: 18 URLs, no /pricing or /plans route
+- url: https://www.tiyaro.ai/book-a-demo/
+  status: 200
+  finding: contact-sales form; the only conversion path on the site
+- url: https://console.tiyaro.ai/
+  status: 0
+  finding: DNS NXDOMAIN - former self-serve console is gone

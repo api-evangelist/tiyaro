@@ -1,0 +1,78 @@
+generated: '2026-08-14'
+method: probed
+source: live DNS + HTTPS probes, plus the first-party PyPI `tiyaro` distribution
+note: >-
+  Tiyaro publishes no versioning policy, no deprecation policy, no SLA and no
+  status page. What the probes DO establish is a lifecycle event the company has
+  not documented anywhere public: the developer platform Tiyaro shipped in
+  2021-2022 - the AI model consumption API, its docs site and its console - has
+  been decommissioned, while the marketing site still links to it. This file
+  records that transition with evidence rather than asserting a policy that does
+  not exist.
+versioning:
+  scheme: null
+  current: null
+  docs: null
+  note: No versioning policy published.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: >-
+    No deprecation or sunset policy published; the developer platform was
+    retired without a public notice we can find.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+status_page_note: >-
+  status.tiyaro.ai does not resolve; no status page is linked from any of the 18
+  pages in the sitemap.
+platform_retirement:
+  summary: >-
+    The Tiyaro developer platform (public AI model inference API + Model Studio
+    console + developer docs) is no longer reachable. The company's current
+    product, DeepQuery, is sold through a book-a-demo motion with no public
+    developer surface.
+  evidence:
+  - host: api.tiyaro.ai
+    check: DNS A
+    result: NXDOMAIN
+    checked: '2026-08-14'
+    was: >-
+      Inference base URL https://api.tiyaro.ai/v1/ent, hardcoded in the
+      first-party CLI (tiyaro 0.0.8, PyPI).
+  - host: docs.tiyaro.ai
+    check: DNS A
+    result: NXDOMAIN
+    checked: '2026-08-14'
+    was: >-
+      Developer documentation. Still referenced today - https://www.tiyaro.ai/docs/
+      is a live page (HTTP 200) whose entire body is
+      `<iframe src="https://docs.tiyaro.ai">`, so the docs route renders empty.
+  - host: console.tiyaro.ai
+    check: DNS A
+    result: NXDOMAIN
+    checked: '2026-08-14'
+    was: API key issuance (/apikeys) and Model Studio publish (/modelstudio-publish).
+  - host: blog.tiyaro.ai
+    check: DNS A
+    result: NXDOMAIN
+    checked: '2026-08-14'
+  - host: deepquery.tiyaro.ai
+    check: DNS A
+    result: NXDOMAIN
+    checked: '2026-08-14'
+    was: Product landing page indexed by search engines.
+  - source: https://pypi.org/project/tiyaro/
+    check: last release
+    result: 0.0.8 on 2022-05-31
+    interpretation: >-
+      The only first-party client library has not shipped in four years, which
+      matches the platform timeline above.
+  - source: https://api.github.com/repos/tiyaro/api-reference-doc
+    check: repository contents
+    result: '"Git Repository is empty"'
+    interpretation: >-
+      The org's "Tiyaro API Reference Documentation" repo was never populated
+      (or was emptied), so no spec survives there either.
+deprecated_operations: []

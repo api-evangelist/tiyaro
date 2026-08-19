@@ -1,0 +1,105 @@
+generated: '2026-08-14'
+method: probed
+source: live HTTPS probes of every Tiyaro host known to apis.yml and to the first-party CLI
+note: >-
+  NO WELL-KNOWN DOCUMENT IS SERVED. www.tiyaro.ai / tiyaro.ai is a Gatsby 5.13.3
+  static site on Firebase Hosting with a catch-all rewrite: EVERY path returns
+  HTTP 200 with `content-type: text/html` and the same `<!DOCTYPE html>` app
+  shell, including a control path that cannot exist
+  (/this-path-does-not-exist-xyz123 -> 200 HTML). Per the pipeline rule, a 200
+  carrying an HTML/SPA shell is not a document, so every row below is recorded
+  as a MISS and NO WellKnown or SecurityTxt pointer is emitted. The remaining
+  Tiyaro hosts (api., docs., console., blog., deepquery.) return NXDOMAIN and
+  could not be probed over HTTP at all.
+hosts:
+- host: https://www.tiyaro.ai
+  reachable: true
+  catch_all_html: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    document: false
+    result: miss (SPA shell)
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    document: false
+    result: miss (SPA shell)
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    document: false
+    result: miss (SPA shell)
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    document: false
+    result: miss (SPA shell)
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    document: false
+    result: miss (SPA shell)
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    document: false
+    result: miss (SPA shell)
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    document: false
+    result: miss (SPA shell)
+  - path: /llms.txt
+    status: 200
+    content_type: text/html
+    document: false
+    result: miss (SPA shell)
+- host: https://tiyaro.ai
+  reachable: true
+  catch_all_html: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    document: false
+    result: miss (SPA shell)
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    document: false
+    result: miss (SPA shell)
+  - path: /llms.txt
+    status: 200
+    content_type: text/html
+    document: false
+    result: miss (SPA shell)
+- host: https://api.tiyaro.ai
+  reachable: false
+  dns: NXDOMAIN
+  documents: []
+- host: https://docs.tiyaro.ai
+  reachable: false
+  dns: NXDOMAIN
+  documents: []
+- host: https://console.tiyaro.ai
+  reachable: false
+  dns: NXDOMAIN
+  documents: []
+- host: https://deepquery.tiyaro.ai
+  reachable: false
+  dns: NXDOMAIN
+  documents: []
+- host: https://blog.tiyaro.ai
+  reachable: false
+  dns: NXDOMAIN
+  documents: []
+control:
+  path: /this-path-does-not-exist-xyz123
+  host: https://www.tiyaro.ai
+  status: 200
+  content_type: text/html
+  interpretation: >-
+    Confirms the 200s above are a catch-all, not served documents. Any
+    /.well-known/* "hit" on this host would be a false positive.

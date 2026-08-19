@@ -1,0 +1,75 @@
+generated: '2026-08-14'
+method: searched
+source: https://pypi.org/pypi/tiyaro/json
+note: >-
+  One first-party package was found across npm, PyPI, RubyGems, crates.io,
+  pkg.go.dev and Maven/NuGet: the PyPI `tiyaro` distribution, which ships both a
+  Click-based CLI (console_scripts entry point `tiyaro = tiyaro.main:cli`) and a
+  model-handler SDK (`tiyaro/sdk/base_handler.py`) for publishing custom models
+  to the former Tiyaro AI consumption platform. Ownership is unambiguous: the
+  PyPI metadata names Venkat Raman and I-Jong Lin with venkat@tiyaro.ai /
+  ijonglin@tiyaro.ai, and the source calls https://api.tiyaro.ai/v1/ent and
+  https://console.tiyaro.ai/modelstudio-publish. The package is ABANDONED - the
+  last release (0.0.8) shipped 2022-05-31 and every Tiyaro API host it targets
+  now returns NXDOMAIN (see lifecycle/tiyaro-lifecycle.yml). Its declared
+  `Homepage` is https://github.com/pypa/sampleproject, an unedited packaging
+  template leftover, not a Tiyaro URL.
+packages:
+- language: python
+  registry: pypi
+  name: tiyaro
+  url: https://pypi.org/project/tiyaro/
+  install: pip install tiyaro
+  official: true
+  version: 0.0.8
+  published: '2022-05-31'
+  first_published: '2021-12-20'
+  release_count: 37
+  license: Apache License 2.0
+  requires_python: '>=3.6'
+  authors:
+  - Venkat Raman <venkat@tiyaro.ai>
+  - I-Jong Lin <ijonglin@tiyaro.ai>
+  kind:
+  - cli
+  - sdk
+  status: abandoned
+  status_note: >-
+    Latest release 2022-05-31; the API hosts the package calls
+    (api.tiyaro.ai, console.tiyaro.ai) no longer resolve as of 2026-08-14.
+  targets:
+  - https://api.tiyaro.ai/v1/ent
+  - https://console.tiyaro.ai/modelstudio-publish
+registries_checked:
+- registry: npm
+  queried:
+  - tiyaro
+  - '@tiyaro/sdk'
+  - tiyaro-sdk
+  - tiyaro-cli
+  result: none (404)
+- registry: pypi
+  queried:
+  - tiyaro
+  - tiyaro-cli
+  - tiyaro-sdk
+  result: tiyaro found (200); others 404
+- registry: rubygems
+  queried:
+  - tiyaro
+  result: none (404)
+- registry: crates.io
+  queried:
+  - tiyaro
+  result: none
+- registry: pkg.go.dev
+  queried:
+  - github.com/tiyaro/tiyaro-cli
+  result: none (404)
+- registry: github
+  queried:
+  - https://api.github.com/orgs/tiyaro/repos
+  result: >-
+    63 public repos, 60 of them forks of third-party ML models; the only
+    API-relevant first-party repo, tiyaro/api-reference-doc ("Tiyaro API
+    Reference Documentation"), is an EMPTY git repository.

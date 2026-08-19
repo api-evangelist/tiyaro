@@ -1,0 +1,81 @@
+generated: '2026-08-14'
+method: searched
+source: https://pypi.org/project/tiyaro/
+note: >-
+  Command surface read verbatim from the published wheel
+  tiyaro-0.0.8-py3-none-any.whl (files.pythonhosted.org), which declares the
+  console_scripts entry point `tiyaro = tiyaro.main:cli`. Tiyaro's own docs page
+  (https://www.tiyaro.ai/docs/) is an iframe of docs.tiyaro.ai, which no longer
+  resolves, so the distribution itself is the only surviving first-party source
+  for this surface. The CLI is functional to INSTALL but not to USE: every
+  endpoint it calls is dead (see lifecycle/tiyaro-lifecycle.yml).
+name: tiyaro
+package: packages/tiyaro-packages.yml
+version: 0.0.8
+released: '2022-05-31'
+status: abandoned
+install:
+- method: pip
+  command: pip install tiyaro
+authentication:
+  style: api-key
+  env_var: TIYARO_API_KEY
+  transport: 'Authorization: Bearer <TIYARO_API_KEY>'
+  key_issuance: https://console.tiyaro.ai/apikeys
+  key_issuance_status: host does not resolve (NXDOMAIN, checked 2026-08-14)
+purpose: >-
+  Package, test locally, and push a custom PyTorch model into the Tiyaro model
+  hosting platform ("Tiyaro Push" / Model Studio), then run inference against
+  the hosted model.
+commands:
+- name: init
+  summary: Initializes model repo for Tiyaro Push
+  flags:
+  - -f, --force
+  - -v, --verbose
+  note: >-
+    Prompts for model name (pattern [a-zA-Z_][a-zA-Z0-9_]*), framework
+    (Pytorch/Tensorflow/JAX/Other - only pytorch is supported) and model class
+    (image-classification, text-classification, custom); scaffolds
+    ./tiyaro_handler with a model_manifest.yml and handler templates.
+- name: push
+  summary: Pushes model repo to Tiyaro Infrastructure
+  flags:
+  - -f, --force
+  - -v, --verbose
+  note: >-
+    Reserves a vendor namespace, git-archives HEAD into ./build, uploads via a
+    presigned URL, and reports status to the Model Studio publish page.
+- name: test
+  summary: Test model locally & validate expected input output formats
+  flags:
+  - -p, --pretrained  (pretrained file path or URL; default from model_manifest.yml)
+  - -i, --input       (required; input string or file path)
+  - -o, --output      (inference output file)
+  - -dv, --delvenv    (delete the test venv after each run, default true)
+  - -v, --verbose
+  note: Creates ./.tiyaro_test_venv, installs the handler requirements, runs tiyaro_handler_test.py.
+- name: infer
+  summary: Runs inference on model hosted on Tiyaro
+  status: not-implemented
+  note: Ships as a work-in-progress stub in 0.0.8 - the command prints a WIP notice and exits.
+- name: clean
+  summary: Forcefully cleans all tiyaro generated files
+  flags:
+  - -f, --force
+  - -v, --verbose
+endpoints_called:
+- url: https://api.tiyaro.ai/v1/ent
+  role: inference endpoint prefix
+  status: NXDOMAIN (2026-08-14)
+- url: https://console.tiyaro.ai/modelstudio-publish
+  role: push status page
+  status: NXDOMAIN (2026-08-14)
+- url: https://wpxkueck1a.execute-api.us-west-2.amazonaws.com/Prod/registered_vendor_name
+  role: vendor namespace reservation
+- url: https://wpxkueck1a.execute-api.us-west-2.amazonaws.com/Prod/hello
+  role: presigned upload request
+- url: https://wpxkueck1a.execute-api.us-west-2.amazonaws.com/Prod/customer_download
+  role: handler template download
+- url: https://1quz3qvhsi.execute-api.us-west-2.amazonaws.com/Prod/push-model
+  role: push status updates
