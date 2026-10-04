@@ -51,8 +51,7 @@ tags:
 - Company
 - Artificial Intelligence
 - AI Agents
-- Agentic AI
-- Customer-Support
+- Customer Support
 - ITSM
 - Business Process Automation
 - Enterprise Software
@@ -69,6 +68,7 @@ tags_raw:
 - Enterprise Software
 - LLM
 - Revenue Operations
+- Customer-Support
 apis: []
 common:
 - type: DomainSecurity
