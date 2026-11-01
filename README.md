@@ -64,6 +64,95 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Tiyaro is a company surfaced as a portfolio company of general-catalyst and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Tiyaro is an enterprise AI company whose product, DeepQuery, replicates complete business processes as AI agents that can be described in plain English. Rather than rules engines or brittle integration workflows, DeepQuery uses LLMs combined with enterprise-specific product and customer data to identify a solution strategy and execute it across multiple steps using built-in tools. Its flagship application targets customer support and IT service desks - an "IT SuperAgent" trained on hundreds of third-party product procedures that recommends and executes resolution steps for incoming tickets - alongside revenue-operations and sales/marketing automation use cases. The company was founded by a team that previously built an edge software stack for hosting AI applications, and is backed by General Catalyst. Tiyaro goes to market as an enterprise product engaged through a book-a-demo motion rather than a self-serve developer API.
 
-Backed by: general-catalyst
+**Areas:** Company · Artificial Intelligence · AI Agents · Customer Service · ITSM · Business Process Automation · Enterprise Software · LLM · Revenue Operations
+
+## Tiyaro on APIs.io
+
+Everything profiled for Tiyaro is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/tiyaro/](https://apis.io/providers/tiyaro/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Tiyaro Domain Security](https://apis.io/security/tiyaro/tiyaro-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Tiyaro Plans Pricing](https://apis.io/plans/tiyaro/tiyaro-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Tiyaro Rate Limits](https://apis.io/rate-limits/tiyaro/tiyaro-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.tiyaro.ai/)
+- [Blog](https://www.tiyaro.ai/blog/)
+- [Terms of service](https://www.tiyaro.ai/terms-of-service/)
+- [Privacy policy](https://www.tiyaro.ai/privacy/)
+- [GitHub](https://github.com/tiyaro)
+
+## API Evangelist rating
+
+**Kin Score 7.9** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 5.3 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 7.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/tiyaro/](https://apis.io/providers/tiyaro/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Tiyaro: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/tiyaro/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
